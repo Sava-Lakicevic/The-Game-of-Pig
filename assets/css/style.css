@@ -1,0 +1,137 @@
+:root {
+    --gradientFrom: #000642;
+    --gradientTo: #0015ff;
+    --dark: #000642;
+    --light: #d9ddff;
+    --opacityInactive: 0.5;
+    --opacityActive: 1;
+    --boxShadow: 0 0 10px #888;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all 0.2s;
+}
+body {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    background: linear-gradient(
+        to right,
+        var(--gradientFrom),
+        var(--gradientTo)
+    );
+    font-size: 1.2rem;
+}
+main {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    width: 80rem;
+    height: 30rem;
+    padding: 1rem;
+}
+section {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 2rem;
+}
+.player {
+    background-color: var(--light);
+    border-radius: 1rem;
+}
+.player-active {
+    opacity: var(--opacityActive);
+}
+.player-inactive {
+    opacity: var(--opacityInactive);
+}
+.player-won {
+    background-color: #25af04;
+    color: white;
+}
+.player-won .total-score {
+    font-size: 130%;
+}
+.total-score,
+.current-score {
+    text-align: center;
+}
+.current-score {
+    background-color: var(--dark);
+    color: var(--light);
+    padding: 1rem;
+    border-radius: 1rem;
+}
+.current-score > *,
+.total-score > * {
+    padding: 3px 0;
+}
+button {
+    font-size: 1rem;
+    box-shadow: var(--boxShadow);
+    background-color: var(--light);
+    border: none;
+    width: 100%;
+    height: 10%;
+    border-radius: 1rem;
+    font-weight: 900;
+}
+button:hover {
+    cursor: pointer;
+    scale: 1.05;
+    box-shadow: none;
+}
+button:disabled {
+    scale: none;
+    box-shadow: none;
+    opacity: var(--opacityInactive);
+    cursor: not-allowed;
+}
+.dice-image {
+    height: 200px;
+    width: 200px;
+    border-radius: 1rem;
+    background-size: contain;
+}
+.game-starter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--dark);
+    color: var(--light);
+    cursor: pointer;
+    font-size: 2rem;
+}
+.game-starter:hover {
+    scale: 1.02;
+    color: white;
+}
+.dice-0 {
+    background-image: url("../images/dice-0.png");
+}
+.dice-1 {
+    background-image: url("../images/dice-1.png");
+}
+.dice-2 {
+    background-image: url("../images/dice-2.png");
+}
+.dice-3 {
+    background-image: url("../images/dice-3.png");
+}
+.dice-4 {
+    background-image: url("../images/dice-4.png");
+}
+.dice-5 {
+    background-image: url("../images/dice-5.png");
+}
+.dice-6 {
+    background-image: url("../images/dice-6.png");
+}
+.hidden {
+    display: none;
+}
